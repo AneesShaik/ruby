@@ -1,3 +1,4 @@
+# 1 Question
 puts ("ANGRY BOSS PROGRAM".center(50))
 
 puts "Enter 'I want a raise' when employer input is prompted"
@@ -6,6 +7,7 @@ print "Employer: "
 reply = gets.chomp
 puts "Boss: WHADDAYA MEAN \"I WANT A RAISE.\"?!?  YOU'RE FIRED!!" #Escape character is being implemented
 
+# 2 Question
 puts ("Display Table of contents".center(60))
 linewidth = 60
 puts ("Table of Contents".center(linewidth))

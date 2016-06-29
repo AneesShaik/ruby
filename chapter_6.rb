@@ -1,3 +1,4 @@
+# 1 Question
 puts ("Flow Control".center(50))
 
 puts ("Bottles of beer lyrics".center(50))
@@ -12,6 +13,7 @@ while bottles_of_beer > 1
 end
 puts 'Everyone passes out quite drunk.'
 
+# 2 Question
 puts ""
 puts ("Deaf Grandma program!!!".center(50))
 puts "Hey Sonny! It's your lovely Grandmother! How are you?"
@@ -27,6 +29,7 @@ while (response = gets.chomp) != "BYE"
   end
   puts "GOOD BYE, SONNY!"
 
+# 3 Question
 puts ""
 puts ("Improved Grandma Program".center(50))
 puts "ENTER BYE 3 TIMES IN A ROW TO EXIT"
@@ -56,6 +59,7 @@ while bye < 3
   end
 end
 
+# 4 Question
 puts ""
 puts ("Leap Year Calculating Program".center(50))
 require 'date'
