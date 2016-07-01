@@ -11,7 +11,8 @@ endi = gets.chomp.to_i
 
 puts "Leap years between #{start} and #{endi}:"
 
-for i in start..endi
-  puts i if Date.new(i).leap?
+while start != endi+1
+  puts start if Date.new(start).leap?
+  start += 1
 end
 
