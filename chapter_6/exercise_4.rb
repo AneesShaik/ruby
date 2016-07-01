@@ -1,18 +1,17 @@
 require 'date'
 
-puts ""
 puts "Leap Year Calculating Program".center(50)
 
 print "Starting year: "
-start = gets.chomp.to_i
+start_year = gets.chomp.to_i
 
 print "Ending year: "
-endi = gets.chomp.to_i
+end_year = gets.chomp.to_i
 
-puts "Leap years between #{start} and #{endi}:"
+puts "Leap years between #{start_year} and #{end_year}:"
 
-while start != endi+1
-  puts start if Date.new(start).leap?
-  start += 1
+while start_year != end_year+1
+  puts start_year if Date.new(start_year).leap?
+  start_year += 1
 end
 
