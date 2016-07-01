@@ -8,7 +8,7 @@ print "Sonny: "
 while (reply = gets.chomp) != "bye".upcase
 
   if reply == reply.upcase
-    puts "Grandma: NO, NOT SINCE #{1930+rand(20)}!"
+    puts "Grandma: NO, NOT SINCE #{1930 + rand(20)}!"
   else
     puts "Grandma: HUH?! SPEAK UP, SONNY!"
   end

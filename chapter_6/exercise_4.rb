@@ -4,14 +4,14 @@ puts ""
 puts "Leap Year Calculating Program".center(50)
 
 print "Starting year: "
-start = gets.chomp
+start = gets.chomp.to_i
 
 print "Ending year: "
-endi = gets.chomp
+endi = gets.chomp.to_i
 
 puts "Leap years between #{start} and #{endi}:"
 
-for i in start.to_i..endi.to_i
+for i in start..endi
   puts i if Date.new(i).leap?
 end
 
