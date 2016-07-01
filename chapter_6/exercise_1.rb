@@ -4,11 +4,11 @@ num = 99
 
 while num != 0
 
-puts "#{num} bottles of beer on  the wall, #{num} bottles of beer."
-puts "Take one dwon and pass it around, #{num-1} bottles of beer on the wall."
-puts ""
+  puts "#{num} bottles of beer on  the wall, #{num} bottles of beer."
+  puts "Take one dwon and pass it around, #{num-1} bottles of beer on the wall."
+  puts ""
 
-num -= 1
+  num -= 1
 
 end
 
