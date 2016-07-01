@@ -7,7 +7,7 @@ bye = 0
 
 while bye != 3
   if (response = gets.chomp) == "bye".upcase
-    bye = (bye + 1)
+    bye += 1
     if bye == 3
       puts "Grandma: BYE, SONNY!"
     else
