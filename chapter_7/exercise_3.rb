@@ -7,7 +7,7 @@ i = 1
 puts "#{toc[0].center(line_width * 2)}\n\n"
 
 while array_size != 0
-  puts "#{toc[i]}:#{toc[i + 1].ljust(line_width)} #{toc[i + 2].rjust(line_width)}" # Iterating line to print all the array elements & Spacing not included after ":" 
+  puts "#{toc[i]}: #{toc[i + 1].ljust(line_width)} #{toc[i + 2].rjust(line_width)}" # Iterating line to print all the array elements & Spacing not included after ":"
   i += 3
   array_size -= 3
 end
