@@ -1,9 +1,9 @@
 def englishNumber number
   if number < 0 
-	return "Please enter a number that isn't negative."
+    return "Please enter a number that isn't negative."
   end
   if number == 0
-	return 'zero'
+   return 'zero'
   end
 
   numString = "" 
@@ -97,5 +97,5 @@ while output != 0
 end
 
 puts "No more bottles of beer on the wall, no more bottles of beer."
-puts "Got to the store and buy some more, 99 bottles of beer on the wall."
+puts "Got to the store and buy some more, Ninety-Nine bottles of beer on the wall."
 
