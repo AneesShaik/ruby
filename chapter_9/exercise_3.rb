@@ -28,7 +28,7 @@ class OrangeTree
 
   def pick_orange
     puts "You have picked up 1 orange"
-    @fruit = @fruit -1
+    @fruit -= 1
     
     if @fruit > 0
       puts "You have #{@fruit} oranges left to pick. Hope the Orange you picked is delicious"
@@ -39,23 +39,23 @@ class OrangeTree
 
   def one_year_passes
     if @age >= 0 and @age<10
-      @age = @age + 1
+      @age += 1
     end
 
     if @height >= 0 and @height < 20
-      @height = @height + 1
+      @height += 1
     else
     
     puts "Your #{@tree} is no longer growing taller."
     end
 
     if @age >= 3
-      @fruit = @fruit + (@age * 2)
+      @fruit += @age * 2
     end
 
     if @age >= 3
-      @fruit_picked = @fruit_picked + @fruit_picked
-      @fruit = @fruit - @fruit_picked
+      @fruit_picked *= 2
+      @fruit -= @fruit_picked
     end
   end
 end
