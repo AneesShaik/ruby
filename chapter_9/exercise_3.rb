@@ -1,3 +1,4 @@
+empty = 1
 class OrangeTree
   def initialize
     @tree = "orange tree"
@@ -11,7 +12,6 @@ class OrangeTree
   def age
     puts "Your #{@tree} is #{@age} years old"
     @age = @age
-    one_year_passes
   end
 
   def height
@@ -25,13 +25,19 @@ class OrangeTree
   end
 
   def pick_orange
-    puts "How many oranges do you want to pick?"
-    @fruit_picked = @fruit_picked + gets.chomp.to_i
-    puts "You picked #{@fruit_picked} oranges."
+    puts "You have picked up 1 orange"
+    @fruit = @fruit -1
+    
+    if @fruit > 0
+      puts "You have #{@fruit} oranges left to pick. Hope the Orange you picked is delicious"
+    else
+      puts "You have no more oranges left to be picked"
+      attr_reader :fruit
+    end
   end
 
   def one_year_passes
-    if @age >= 0
+    if @age >= 0 and @age<10
       @age = @age + 1
     end
 
@@ -64,19 +70,42 @@ while true
   puts "b) Number of fruits on your tree"
   puts "c) Pick oranges"
   puts "d) Height of your tree"
-  puts "e) Exit program\n"
+  puts "e) Increase age of tree"
+  puts "f) Exit program"
+  print "Please select an option from above: "
   answer = gets.chomp
+  puts ""
 
-  case answer
-    when "a" then orange.age
-    when "b" then orange.fruit
-    when "c" then orange.pick_orange
-    when "d" then orange.height
-    when "e"
-    puts "Let's hope your tree have a long fruitful life "
+  if answer == "a"
+    orange.age
+  elsif answer == "b"
+    orange.fruit
+  elsif answer == "c"
+    orange.pick_orange  
+    puts "Do you want to pick more oranges?"
+    reply = gets.chomp.upcase
+    if reply == "YES"
+      while reply == "YES"
+        orange.pick_orange
+
+        if orange.fruit != 0
+          puts "Do you want to pick more oranges?"
+          reply = gets.chomp.upcase
+        else 
+          puts "Sorry there are no more Oranges to pick. Please hit ENTER to continue"
+        end
+      end
+    end
+      
+  elsif answer == "d"
+    orange.height
+  elsif answer == "e"
+    puts "Incremented the age of your tree by 1 year"
+    orange.one_year_passes
+  elsif answer == "f"
+    puts "Lets hope your tree has a long fruitful life"
     exit
   else
-
-    puts "Sorry. I didn't get you\n\n"
-  end
+    puts "Sorry I didn't get you\n\n"
+  end  
 end
