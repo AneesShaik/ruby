@@ -1,32 +1,31 @@
 class Dragon
-
   def initialize name
     @name = name
     @asleep = false
-    @stuffInBelly     = 10  #  He's full.
-    @stuffInIntestine =  0  #  He doesn't need to go.
+    @stuff_belly     = 10  #  He's full.
+    @stuff_intestine =  0  #  He doesn't need to go.
 
     puts "#{@name} is born."
   end
 
   def feed
     puts "You feed #{@name}"
-    @stuffInBelly = 10
-    passageOfTime
+    @stuff_belly = 10
+    passage_time
   end
 
   def walk
     puts "You walk  #{@name}"
-    @stuffInIntestine = 0
-    passageOfTime
+    @stuff_intestine = 0
+    passage_time
   end
 
-  def putToBed
+  def put_bed
     puts "You put #{@name} to bed."
     @asleep = true
     3.times do
       if @asleep
-        passageOfTime
+        passage_time
       end
       if @asleep
         puts "#{@name}snores, filling the room with smoke."
@@ -41,14 +40,14 @@ class Dragon
   def toss
     puts "You toss #{@name} up into the air."
     puts "He giggles, which singes your eyebrows."
-    passageOfTime
+    passage_time
   end
 
   def rock
     puts "You rock #{@name} gently."
     @asleep = true
     puts "He briefly dozes off..."
-    passageOfTime
+    passage_time
     if @asleep
       @asleep = false
       puts "...but wakes when you stop."
@@ -57,37 +56,30 @@ class Dragon
 
   private
 
-  #  "private" means that the methods defined here are
-  #  methods internal to the object.  (You can feed
-  #  your dragon, but you can't ask him if he's hungry.)
-
   def hungry?
-    #  Method names can end with "?".
-    #  Usually, we only do this if the method
-    #  returns true or false, like this:
-    @stuffInBelly <= 2
+    @stuff_belly <= 2
   end
 
   def poopy?
-    @stuffInIntestine >= 8
+    @stuff_intestine >= 8
   end
 
-  def passageOfTime
-    if @stuffInBelly > 0
-      #  Move food from belly to intestine.
-      @stuffInBelly     = @stuffInBelly     - 1
-      @stuffInIntestine = @stuffInIntestine + 1
-    else  #  Our dragon is starving!
+  def passage_time
+    if @stuff_belly > 0
+      @stuff_belly     = @stuff_belly     - 1
+      @stuff_intestine = @stuff_intestine + 1
+    else
       if @asleep
         @asleep = false
         puts "He wakes up suddenly!"
       end
+
       puts "#{@name} is starving!  In desperation, he ate YOU!"
-      exit  #  This quits the program.
+      exit  
     end
 
-    if @stuffInIntestine >= 10
-      @stuffInIntestine = 0
+    if @stuff_intestine >= 10
+      @stuff_intestine = 0
       puts "Whoops!  #{@name} had an accident..."
     end
 
@@ -96,6 +88,7 @@ class Dragon
         @asleep = false
         puts 'He wakes up suddenly!'
       end
+
       puts "#{@name}'s stomach grumbles..."
     end
 
@@ -104,22 +97,19 @@ class Dragon
         @asleep = false
         puts 'He wakes up suddenly!'
       end
+
       puts "#{@name} does the potty dance..."
     end
   end
 
 end
-# ============================================================================
 
-# Now, the code to interact with the dragon
 puts "Hi Danereys Targaryen. I'm glad you made it on time. Your dragon is hatching!"
 puts "(You know, I think you should give it a name.)"
 print "Name: "
 pet = Dragon.new(gets.chomp)
-puts "Your dragon seems quite lively."
-puts
+puts "Your dragon seems quite lively.\n\n"
 
-# The program ends if you set free your dragon or your dragon eats you
 while true
   puts "What would you like to do?"
   puts "a) Feed your dragon."
@@ -135,7 +125,7 @@ while true
   elsif answer == "b"
     pet.walk
   elsif answer == "c"
-    pet.putToBed
+    pet.put_bed
   elsif answer == "d"
     pet.toss
   elsif answer == "e"
@@ -144,8 +134,6 @@ while true
     puts "Let's hope it'll do well Danerys Mother of Dragons First of her name, Queen of Andals and First men, Breaker of chains, The Unburnt, Kahleesi and bla bla bla "
     exit
   else
-    puts "Sorry. I didn't get you Dany"
+    puts "Sorry. I didn't get you Dany\n\n"
   end
-
-  puts
 end

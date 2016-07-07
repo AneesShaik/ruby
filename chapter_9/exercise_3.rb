@@ -57,20 +57,16 @@ end
 
 orange = Orange_tree.new
 orange.age
-#orange.age
-#orange.age
-#orange.age
-#orange.age
-#orange.fruit
-#orange.pick_orange
-#orange.fruit
+orange.fruit
+orange.height
 
 while true
   puts "\nWhat would you like to know about your tree?"
   puts "a) Age of the Tree"
   puts "b) Number of fruits on your tree"
   puts "c) Pick oranges"
-  puts "d) Exit program\n"
+  puts "d) Height of your tree"
+  puts "e) Exit program\n"
   answer = gets.chomp
 
   if answer    == "a"
@@ -80,11 +76,11 @@ while true
   elsif answer == "c"
     orange.pick_orange
   elsif answer == "d"
+    orange.height
+  elsif answer == "e"
     puts "Let's hope your tree have a long fruitful life "
     exit
   else
-    puts "Sorry. I didn't get you"
+    puts "Sorry. I didn't get you\n\n"
   end
-
-  puts
 end
