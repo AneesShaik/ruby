@@ -1,5 +1,5 @@
 class Dragon
-  def initialize name
+  def initialize(name)
     @name = name
     @asleep = false
     @stuff_belly     = 10  #  He's full.
@@ -23,14 +23,17 @@ class Dragon
   def put_bed
     puts "You put #{@name} to bed."
     @asleep = true
+    
     3.times do
       if @asleep
         passage_time
       end
+
       if @asleep
         puts "#{@name}snores, filling the room with smoke."
       end
     end
+
     if @asleep
       @asleep = false
       puts "#{@name} wakes up slowly."
@@ -48,6 +51,7 @@ class Dragon
     @asleep = true
     puts "He briefly dozes off..."
     passage_time
+
     if @asleep
       @asleep = false
       puts "...but wakes when you stop."
@@ -119,20 +123,16 @@ while true
   puts "e) Rock your dragon."
   puts "f) Set your dragon free..."
   answer = gets.chomp
-
-  if answer    == "a"
-    pet.feed
-  elsif answer == "b"
-    pet.walk
-  elsif answer == "c"
-    pet.put_bed
-  elsif answer == "d"
-    pet.toss
-  elsif answer == "e"
-    pet.rock
-  elsif answer == "f"
-    puts "Let's hope it'll do well Danerys Mother of Dragons First of her name, Queen of Andals and First men, Breaker of chains, The Unburnt, Kahleesi and bla bla bla "
-    exit
+  
+  case answer
+  when "a" then pet.feed
+  when "b" then pet.walk
+  when "c" then pet.put_bed
+  when "d" then pet.toss
+  when "e" then pet.rock
+  when "f"
+    puts  "Let's hope it'll do well Danerys Mother of Dragons First of her name, Queen of Andals and First men, Breaker of chains, The Unburnt, Kahleesi and bla bla bla "
+    exit 
   else
     puts "Sorry. I didn't get you Dany\n\n"
   end
