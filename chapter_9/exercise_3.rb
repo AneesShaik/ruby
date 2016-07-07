@@ -8,6 +8,8 @@ class OrangeTree
     @fruit_picked = 0
     puts "Your #{@tree} is budding"
   end
+ 
+  attr_reader :fruit
 
   def age
     puts "Your #{@tree} is #{@age} years old"
@@ -32,7 +34,6 @@ class OrangeTree
       puts "You have #{@fruit} oranges left to pick. Hope the Orange you picked is delicious"
     else
       puts "You have no more oranges left to be picked"
-      attr_reader :fruit
     end
   end
 
@@ -92,7 +93,8 @@ while true
           puts "Do you want to pick more oranges?"
           reply = gets.chomp.upcase
         else 
-          puts "Sorry there are no more Oranges to pick. Please hit ENTER to continue"
+          puts "Sorry there are no more Oranges to pick !!!"
+          reply = nil
         end
       end
     end
