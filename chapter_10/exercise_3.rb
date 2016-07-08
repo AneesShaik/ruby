@@ -1,9 +1,14 @@
-def program_logger(block_description, &block)
-  puts "Started block #{block_description}."
-  result = block.call
-  puts "#{block_description} finished, returning: #{result}"
-end
+$nesting_depth = 0
 
+def program_logger(block_description, &block)
+  $nesting_depth += 1
+  puts "#{"\t" * $nesting_depth} Started block #{block_description}"
+
+  result = block.call
+
+  puts "#{"\t" * $nesting_depth} #{block_description} finished, returning: #{result}"
+  $nesting_depth -= 1
+end
 
 program_logger "Square it: outer block" do |x|
   outer = 6
@@ -12,7 +17,7 @@ program_logger "Square it: outer block" do |x|
     inner = 8
 
     program_logger "Say hi: innermost block" do
-      puts "Hello"
+      "Hello"
     end
 
     inner * 2
@@ -20,3 +25,4 @@ program_logger "Square it: outer block" do |x|
 
   outer ** 2
 end
+
