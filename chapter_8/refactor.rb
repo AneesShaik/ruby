@@ -1,5 +1,5 @@
 
-Numbers_To_Name = {
+NUMBERS_TO_NAME = {
   1000000 => "million",
   1000 => "thousand",
   100 => "hundred",
@@ -31,9 +31,11 @@ Numbers_To_Name = {
   2 => "two",
   1 => "one"
 }
+
 def in_words(int)
   str = ""
-  Numbers_To_Name.each do |num, name|
+
+  NUMBERS_TO_NAME.each do |num, name|
     if int == 0
       return str
     elsif int.to_s.length == 1 && int / num > 0
